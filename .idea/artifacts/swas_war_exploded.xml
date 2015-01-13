@@ -82,7 +82,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="C:\sandbox\spring-webapp-skeleton-read-only\target/MANIFEST.MF" />
+        <element id="file-copy" path="C:\sandbox\asa-demo\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="swas/web/Web" />
     </root>
