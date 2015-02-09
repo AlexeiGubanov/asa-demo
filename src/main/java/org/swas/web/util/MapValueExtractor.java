@@ -2,10 +2,6 @@ package org.swas.web.util;
 
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class MapValueExtractor implements ValueExtractor {
 
     private Map<String, ?> map;

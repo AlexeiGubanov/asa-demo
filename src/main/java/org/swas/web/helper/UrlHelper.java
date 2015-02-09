@@ -1,10 +1,5 @@
 package org.swas.web.helper;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- *         TODO: clean after change
- */
 public class UrlHelper {
 
     public static final String URL_USER_VIEW = "/admin/users";

@@ -1,9 +1,5 @@
 package org.swas.web.dto.response;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 27.02.12
- */
 public abstract class AbstractResponseAdapter<T> {
 
     protected T target;

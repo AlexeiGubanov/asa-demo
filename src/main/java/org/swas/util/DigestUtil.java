@@ -3,10 +3,6 @@ package org.swas.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class DigestUtil {
     public static String getMd5Digest(String str) {
         return getDigester(str, "MD5");

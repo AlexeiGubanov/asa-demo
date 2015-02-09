@@ -22,8 +22,6 @@ import java.util.List;
  *
  * @param <T>  the type of the domain object
  * @param <ID> the type of the id of domain object
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public abstract class GenericDaoImpl<T, ID extends Serializable> implements GenericDao<T, ID> {
 

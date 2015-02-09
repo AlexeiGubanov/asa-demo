@@ -6,10 +6,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 public class CharacterEncodingInterceptor extends HandlerInterceptorAdapter {
 
     private String encoding = "UTF-8";

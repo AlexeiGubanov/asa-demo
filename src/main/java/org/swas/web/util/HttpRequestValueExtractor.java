@@ -2,10 +2,6 @@ package org.swas.web.util;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class HttpRequestValueExtractor implements ValueExtractor {
 
     private HttpServletRequest request;

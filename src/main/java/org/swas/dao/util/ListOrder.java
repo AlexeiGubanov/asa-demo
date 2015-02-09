@@ -3,8 +3,6 @@ package org.swas.dao.util;
 /**
  * Represents an order param for data requests
  *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public class ListOrder {
 

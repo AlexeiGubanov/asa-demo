@@ -10,8 +10,6 @@ import org.swas.domain.User;
 /**
  * Sample hibernate implementation of {@code UserDao}
  *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 17.12.12
  */
 @Repository
 public class UserDaoImpl extends GenericDaoImpl<User, Long> implements UserDao {

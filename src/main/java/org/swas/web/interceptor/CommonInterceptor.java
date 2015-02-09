@@ -8,10 +8,6 @@ import org.swas.web.SessionAttribute;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 08.12.11
- */
 public class CommonInterceptor extends HandlerInterceptorAdapter {
 
 

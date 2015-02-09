@@ -8,9 +8,6 @@ package org.swas.dao.util;
  * <li>usePagination - true if target resultset must be {@link PagedList}</li>
  * <li>orders - array of {@link ListOrder}</li>
  * </ul>
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public class ListParams {
 

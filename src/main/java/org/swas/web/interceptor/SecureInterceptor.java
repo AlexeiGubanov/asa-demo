@@ -12,11 +12,6 @@ import org.swas.web.util.UrlPatternMatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * User: GubanovAS
- * Date: 09.08.11
- * Time: 9:37
- */
 public class SecureInterceptor extends HandlerInterceptorAdapter {
 
     private UrlPatternMatcher authRequiredMatcher = new AntUrlPatternMatcher(new String[]{"/admin/**"});

@@ -4,10 +4,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.view.AbstractUrlBasedView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 public class TilesUrlBasedViewResolver extends UrlBasedViewResolver {
 
     private String tilesDefinitionName = null;

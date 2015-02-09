@@ -4,9 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Interface that allows to check url is matches certain rules.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
  */
 public interface UrlPatternMatcher {
 

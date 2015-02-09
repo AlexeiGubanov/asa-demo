@@ -11,10 +11,6 @@ import org.springframework.ui.velocity.VelocityEngineUtils;
 import java.util.Locale;
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 02.02.12
- */
 @Service
 public class VelocityTmplMerger implements TmplMerger {
 

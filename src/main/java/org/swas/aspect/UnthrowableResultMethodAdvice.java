@@ -20,9 +20,6 @@ import org.swas.service.Result;
  * <property name="expression" value="execution(com.yowo.service.Result com.yowo.service.*.*(..))" />
  * </bean>
  * <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 08.12.11
  */
 public class UnthrowableResultMethodAdvice implements Ordered, MethodInterceptor {
 

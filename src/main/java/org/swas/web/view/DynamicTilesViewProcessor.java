@@ -14,10 +14,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 public class DynamicTilesViewProcessor {
     final Logger logger = LoggerFactory.getLogger(DynamicTilesViewProcessor.class);
     private String derivedDefinitionName = null;

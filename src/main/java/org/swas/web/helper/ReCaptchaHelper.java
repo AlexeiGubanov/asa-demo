@@ -8,11 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
-/**
- * User: GubanovAS
- * Date: 15.08.11
- * Time: 5:47
- */
 @Component
 public class ReCaptchaHelper {
 

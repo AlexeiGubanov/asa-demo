@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.Normalizer;
 import java.util.List;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class CommonUtils {
 
     public static final String[] invalidFileNameChars = {

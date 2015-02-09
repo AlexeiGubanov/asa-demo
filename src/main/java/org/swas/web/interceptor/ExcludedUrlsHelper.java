@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Adapter that checks if url is excluded using {@link UrlPatternMatcher}.
- *
- * @author GubanovAS
- *         Date: 18.08.11
  */
 public class ExcludedUrlsHelper implements ExcludedUrlsAware {
 

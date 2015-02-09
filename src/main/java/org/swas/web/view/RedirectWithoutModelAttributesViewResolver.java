@@ -7,10 +7,6 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Locale;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 public class RedirectWithoutModelAttributesViewResolver implements ViewResolver, Ordered {
 
     // Have a highest priority by default

@@ -9,10 +9,6 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Size;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 01.12.11
- */
 @FieldMatch(original = "password", compared = "passwordC", message = "{validator.constraints.PasswordsNotEquals.message}")
 public class SignUpForm extends ReCaptchaAwareForm {
 
