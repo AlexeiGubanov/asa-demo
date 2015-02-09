@@ -12,10 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 07.12.11
- */
 @Component
 public class AjaxHandlerExceptionResolver extends AbstractUrlMatchHandlerExceptionResolver {
 

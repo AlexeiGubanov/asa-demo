@@ -8,9 +8,6 @@ import java.util.List;
 
 /**
  * Basic service interface for dao-aware services.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 08.12.11
  */
 public interface GenericDaoService<T extends Persistable<ID>, ID extends Serializable> {
     T get(ID id);

@@ -1,10 +1,5 @@
 package org.swas.domain;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 17.12.12
- */
-
 import org.hibernate.annotations.Index;
 
 import javax.persistence.*;
@@ -12,10 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 @Entity
 public class User extends BasicPersistent {
 

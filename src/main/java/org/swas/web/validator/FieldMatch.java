@@ -11,10 +11,6 @@ import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 @Documented
 @Constraint(validatedBy = {FieldMatchValidator.class})
 @Target({TYPE, ANNOTATION_TYPE})

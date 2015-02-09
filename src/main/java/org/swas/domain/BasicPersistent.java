@@ -5,11 +5,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-/**
- * Common persistable class with Long ID.
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 @MappedSuperclass
 public abstract class BasicPersistent extends AbstractPersistable<Long> {
     @Id

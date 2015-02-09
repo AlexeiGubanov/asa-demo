@@ -68,21 +68,10 @@ public class GenericDaoServiceImpl<T extends Persistable<ID>, ID extends Seriali
         }
     }
 
-//    @Transactional
-//    public Result createOrUpdate(T... entities) {
-//        List<ID> ids = new ArrayList<ID>();
-//        for (T e : entities) {
-//            dao.createOrUpdate(e);
-//            ids.add(e.getId());
-//        }
-//        return new Result(ids);
-//    }
-
     @Transactional
     public Result createOrUpdate(T... entities) {
         List<T> r = new ArrayList<T>();
         for (T e : entities) {
-            //TODO по хорошему тут нужно делать merge, т.к. возможно не все поля придут и некоторые затрутся
             getDao().createOrUpdate(e);
             r.add(e);
         }
@@ -93,7 +82,6 @@ public class GenericDaoServiceImpl<T extends Persistable<ID>, ID extends Seriali
     public Result create(T... entities) {
         List<T> r = new ArrayList<T>();
         for (T e : entities) {
-            //TODO по хорошему тут нужно делать merge, т.к. возможно не все поля придут и некоторые затрутся
             getDao().create(e);
             r.add(e);
         }

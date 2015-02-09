@@ -7,9 +7,6 @@ import java.util.Date;
 /**
  * Common implementation for {@code Persistable} interface.
  * Contains common attributes, equality and hashCode logic overridings (relative to ID attribute).
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 @MappedSuperclass
 public abstract class AbstractPersistable<ID extends Serializable> implements Persistable<ID> {

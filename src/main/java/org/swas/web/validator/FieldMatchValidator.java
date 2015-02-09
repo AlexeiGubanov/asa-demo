@@ -6,10 +6,6 @@ import org.springframework.beans.PropertyAccessorFactory;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 
     private String original;

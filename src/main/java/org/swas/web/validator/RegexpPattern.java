@@ -1,9 +1,5 @@
 package org.swas.web.validator;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
- */
 public class RegexpPattern {
     public static final String EMAIL = "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,4})+$";
     public static final String PHONE = "^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$";

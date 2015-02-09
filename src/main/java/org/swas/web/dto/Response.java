@@ -9,13 +9,9 @@ import org.springframework.validation.ObjectError;
 
 import java.util.Locale;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 24.11.11
- */
 public class Response<T> {
 
-    private static String SUCCESS_TEXT = "Операция выполнена успешно";// mh.getMessage("response.common.success",Locale.getDefault()
+    private static String SUCCESS = "response.common.success";
 
     private Boolean success;
 
@@ -26,6 +22,7 @@ public class Response<T> {
     private Long total;
 
     private T data;
+
     public static final Response AUTH_REQUERED_ERROR = Response.error("You must sign in");
 
     public static Response<Object> error(Errors result, MessageSource ms, Locale locale) {
@@ -51,7 +48,7 @@ public class Response<T> {
         Response<T> r = new Response<T>();
         r.setSuccess(true);
         r.setData(data);
-        r.setMessage(SUCCESS_TEXT);
+        r.setMessage(SUCCESS);
         return r;
     }
 
@@ -96,7 +93,7 @@ public class Response<T> {
     public static Response success() {
         Response r = new Response<Object>();
         r.setSuccess(true);
-        r.setMessage(SUCCESS_TEXT);
+        r.setMessage(SUCCESS);
         return r;
     }
 

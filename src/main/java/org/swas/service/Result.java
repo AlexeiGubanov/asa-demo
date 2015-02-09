@@ -7,12 +7,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Arrays;
 
-/**
- * Common return type.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 08.12.11
- */
 public class Result {
 
     public static final int OK = 0;

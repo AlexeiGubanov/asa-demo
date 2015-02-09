@@ -1,9 +1,5 @@
 package org.swas.domain;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 public enum UserStatus {
     NEW,
     ACTIVE,
