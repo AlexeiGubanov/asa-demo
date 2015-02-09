@@ -27,7 +27,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-@Service
+@Service("userService")
 public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implements UserService {
 
   private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
