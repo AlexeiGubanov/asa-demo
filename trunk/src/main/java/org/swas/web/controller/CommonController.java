@@ -10,10 +10,6 @@ import org.swas.web.helper.ViewHelper;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 @Controller
 public class CommonController {
 

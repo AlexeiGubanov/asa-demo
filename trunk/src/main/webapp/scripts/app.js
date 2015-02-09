@@ -3,10 +3,6 @@ app = {
 
 };
 
-/**
- * Базовый класс
- * @param config
- */
 app.Base = function (config) {
     config = config || {};
     $.extend(this, config);
@@ -23,9 +19,6 @@ app.Base.prototype = {
 };
 
 
-/**
- * Интерфейс наблюдаемого объекта
- */
 app.Observable = $.inherit(app.Base, {
     init:function () {
         this.observers = [];

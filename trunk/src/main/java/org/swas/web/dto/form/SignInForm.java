@@ -49,4 +49,14 @@ public class SignInForm extends ReCaptchaAwareForm {
     public void setRedirectTo(String redirectTo) {
         this.redirectTo = redirectTo;
     }
+
+    @Override
+    public String toString() {
+        return "SignInForm{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", fromUrl='" + fromUrl + '\'' +
+                ", redirectTo='" + redirectTo + '\'' +
+                '}';
+    }
 }

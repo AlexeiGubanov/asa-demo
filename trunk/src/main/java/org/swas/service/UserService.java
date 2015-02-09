@@ -6,9 +6,6 @@ import java.util.Locale;
 
 /**
  * Sample service for user domain class.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public interface UserService extends GenericDaoService<User, Long> {
 

@@ -2,10 +2,6 @@ package org.swas.web.dto.form;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 15.02.12
- */
 public abstract class ReCaptchaAwareForm {
 
     private String recaptchaChallenge;

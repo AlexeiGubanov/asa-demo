@@ -10,9 +10,6 @@ import java.util.HashMap;
 
 /**
  * Simple UrlPatternMatcher implementation, based on {@link AntPathMatcher} matcher.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 23.01.12
  */
 public class AntUrlPatternMatcher implements UrlPatternMatcher {
     private static final Logger log = LoggerFactory.getLogger(AntUrlPatternMatcher.class);

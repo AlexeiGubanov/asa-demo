@@ -4,10 +4,6 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 15.02.12
- */
 public class AttemptsSessionStorage {
 
     private static final String STORAGE = "ATTEMPTS_SESSION_STORAGE";

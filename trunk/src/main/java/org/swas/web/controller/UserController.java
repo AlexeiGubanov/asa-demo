@@ -1,5 +1,7 @@
 package org.swas.web.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BeanPropertyBindingResult;
@@ -38,10 +40,6 @@ import java.util.Locale;
 import java.util.Properties;
 
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 01.12.11
- */
 @Controller
 public class UserController {
 
@@ -60,6 +58,7 @@ public class UserController {
     @Autowired
     private ViewHelper vh;
 
+    private static final Logger LOG = LoggerFactory.getLogger(AuthController.class);
 
     public String generateCaptcha(Locale locale) {
         if (!"1".equals(SystemParameters.getParam("testMode.recaptcha"))) {
@@ -69,14 +68,11 @@ public class UserController {
     }
 
     private Response checkBots(HttpServletRequest request, Locale locale, ReCaptchaAwareForm form) {
-        // логируем запрос
         AttemptsSessionStorage as = AttemptsSessionStorage.forSession(request.getSession());
-        // смотрим валидацию
         if (!as.isGood(request.getRemoteAddr())) {
             Properties p = new Properties();
             p.put("needRecaptcha", "true");
             if (form.haveRecaptcha()) {
-                // валидируем
                 if (!"1".equals(SystemParameters.getParam("testMode.recaptcha"))) {
                     if (!captchaHelper.checkCaptcha(request.getRemoteAddr(), form.getRecaptchaChallenge(), form.getRecaptchaResponse())) {
                         return Response.error(p, mh.getMessage("antiBots.recaptchaInvalid", locale));
@@ -142,9 +138,11 @@ public class UserController {
 
     private Response signInInternal(SignInForm form, HttpServletRequest request, HttpServletResponse response, Locale locale) throws Exception {
         Errors errors = new BeanPropertyBindingResult(form, "signInForm");
+        LOG.debug("Authentificating %s", form);
         validator.validate(form, errors);
 
         if (errors.hasErrors()) {
+            LOG.debug("Authentification fails: %s", errors);
             return Response.error(errors, mh.getMessageSource(), locale);
         }
 

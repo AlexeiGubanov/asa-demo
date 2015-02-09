@@ -24,10 +24,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 @Controller
 public class AuthController {
 
@@ -53,9 +49,7 @@ public class AuthController {
         OAuthResponse r = restTemplate.getForObject("http://ulogin.ru/token.php?token={token}&host={host}", OAuthResponse.class, token, request.getServerName());
         if (r.getUid() == null)
             return "error";
-        //вероятнее всего придется делать callback для ulogin, который передаст сюда токен и действие
 
-        // смотрим есть ли такой юзер
         String login = r.getNetwork() + "_" + r.getUid();
         User u = userDao.findByLogin(login);
         if (u == null) {
