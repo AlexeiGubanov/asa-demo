@@ -6,40 +6,40 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 public class TilesUrlBasedViewResolver extends UrlBasedViewResolver {
 
-    private String tilesDefinitionName = null;
-    private String tilesBodyAttributeName = null;
-    private String tilesDefinitionDelimiter = null;
+  private String tilesDefinitionName = null;
+  private String tilesBodyAttributeName = null;
+  private String tilesDefinitionDelimiter = null;
 
-    public void setTilesDefinitionName(String tilesDefinitionName) {
-        this.tilesDefinitionName = tilesDefinitionName;
+  public void setTilesDefinitionName(String tilesDefinitionName) {
+    this.tilesDefinitionName = tilesDefinitionName;
+  }
+
+  public void setTilesBodyAttributeName(String tilesBodyAttributeName) {
+    this.tilesBodyAttributeName = tilesBodyAttributeName;
+  }
+
+  public void setTilesDefinitionDelimiter(String tilesDefinitionDelimiter) {
+    this.tilesDefinitionDelimiter = tilesDefinitionDelimiter;
+  }
+
+  @Override
+  protected AbstractUrlBasedView buildView(String viewName) throws Exception {
+    AbstractUrlBasedView view = super.buildView(viewName);
+    if (view instanceof DynamicTilesView) {
+      DynamicTilesView dtv = (DynamicTilesView) view;
+      if (StringUtils.hasLength(tilesDefinitionName)) {
+        dtv.setTilesDefinitionName(tilesDefinitionName);
+      }
+      if (StringUtils.hasLength(tilesBodyAttributeName)) {
+        dtv.setTilesBodyAttributeName(tilesBodyAttributeName);
+      }
+      if (tilesDefinitionDelimiter != null) {
+        dtv.setTilesDefinitionDelimiter(tilesDefinitionDelimiter);
+      }
     }
+    return view;
 
-    public void setTilesBodyAttributeName(String tilesBodyAttributeName) {
-        this.tilesBodyAttributeName = tilesBodyAttributeName;
-    }
-
-    public void setTilesDefinitionDelimiter(String tilesDefinitionDelimiter) {
-        this.tilesDefinitionDelimiter = tilesDefinitionDelimiter;
-    }
-
-    @Override
-    protected AbstractUrlBasedView buildView(String viewName) throws Exception {
-        AbstractUrlBasedView view = super.buildView(viewName);
-        if (view instanceof DynamicTilesView) {
-            DynamicTilesView dtv = (DynamicTilesView) view;
-            if (StringUtils.hasLength(tilesDefinitionName)) {
-                dtv.setTilesDefinitionName(tilesDefinitionName);
-            }
-            if (StringUtils.hasLength(tilesBodyAttributeName)) {
-                dtv.setTilesBodyAttributeName(tilesBodyAttributeName);
-            }
-            if (tilesDefinitionDelimiter != null) {
-                dtv.setTilesDefinitionDelimiter(tilesDefinitionDelimiter);
-            }
-        }
-        return view;
-
-    }
+  }
 
 
 }

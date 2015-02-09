@@ -31,17 +31,6 @@
         <put-attribute name="title" value="site.titleAdmin"/>
     </definition>
 
-    <!--<definition name="placesForm" template="/WEB-INF/jsp/pages/admin/placesForm.jsp"/>-->
-    <!--<definition name="placeEditForm" template="/WEB-INF/jsp/pages/admin/placeEditForm.jsp"/>-->
-
-    <!-- common template for admin -->
-    <definition name=".pdf.mytrip" template="/WEB-INF/jsp/pages/tmpl/mytrip.pdf.jsp">
-        <put-attribute name="title" value="site.titleAdmin"/>
-    </definition>
-    <definition name=".pdf.tourguide" template="/WEB-INF/jsp/pages/tmpl/tourguide.pdf.jsp">
-        <put-attribute name="title" value="site.titleAdmin"/>
-    </definition>
-
     <!-- common template for info-ajax requests -->
     <definition name=".info.root" template="/WEB-INF/jsp/layout/stub.jsp">
     </definition>

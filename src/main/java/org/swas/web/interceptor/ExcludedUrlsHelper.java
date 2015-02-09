@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class ExcludedUrlsHelper implements ExcludedUrlsAware {
 
-    private UrlPatternMatcher excludedUrls;
+  private UrlPatternMatcher excludedUrls;
 
-    public UrlPatternMatcher getExcludedUrls() {
-        return excludedUrls;
-    }
+  public UrlPatternMatcher getExcludedUrls() {
+    return excludedUrls;
+  }
 
-    public void setExcludedUrls(UrlPatternMatcher excludedUrls) {
-        this.excludedUrls = excludedUrls;
-    }
+  public void setExcludedUrls(UrlPatternMatcher excludedUrls) {
+    this.excludedUrls = excludedUrls;
+  }
 
-    public boolean isExcluded(String path) {
-        return excludedUrls.isMatch(path);
-    }
+  public boolean isExcluded(String path) {
+    return excludedUrls.isMatch(path);
+  }
 
-    public boolean isExcluded(HttpServletRequest request) {
-        return excludedUrls.isMatch(request);
-    }
+  public boolean isExcluded(HttpServletRequest request) {
+    return excludedUrls.isMatch(request);
+  }
 }
