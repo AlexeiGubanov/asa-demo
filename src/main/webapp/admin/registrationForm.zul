@@ -1,0 +1,83 @@
+<zk xmlns:c="client"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul/zul.xsd">
+    <style>
+        .meter {
+        font-size: 1px;
+        height: 3px;
+        }
+        .meter-inner {
+        width: 0px;
+        height: 3px;
+        }
+        .meter-red .meter-inner{
+        background: red;
+        }
+        .meter-orange .meter-inner{
+        background: orange;
+        }
+        .meter-green .meter-inner{
+        background: green;
+        }
+    </style>
+    <window border="normal" width="400px" title="Welcome! New User"
+            apply="org.swas.web.zk.composer.RegistrationComposer">
+        <grid hflex="1"> <!-- hflex="1" - available width inside parent (window) -->
+            <columns visible="false">
+                <column/>
+                <!-- define 2 columns to enable auxhead/er -->
+                <column/>
+            </columns>
+            <auxhead>
+                <auxheader colspan="2" label="Registration Form" style="font-size:16px" image="../images/picture.png"/>
+            </auxhead>
+            <rows>
+                <row>
+                    User Name
+                    <textbox id="nameBox" hflex="1" constraint="no empty"/>
+                </row>
+                <row>
+                    E-mail
+                    <textbox id="emailBox" hflex="1" constraint="no empty"/>
+                </row>
+                <row>
+                    Password
+                    <textbox id="passwordBox" hflex="1" constraint="no empty" type="password" c:onChanging="meterUpdate(event)"/>
+                </row>
+                <row>
+                    Password Strength
+                    <vlayout>
+                        <div id="meter" sclass="meter" width="240px">
+                            <div sclass="meter-inner"></div>
+                        </div>
+                        <label id="msg" />
+                    </vlayout>
+                </row>
+                <row>
+                    Gender:
+                    <radiogroup id="genderRadio">
+                        <radio label="Male" value="male" image="/images/male.png" checked="true"/>
+                        <radio label="Female" value="female" image="/images/female.png"/>
+                    </radiogroup>
+                </row>
+                <row>
+                    Birthday
+                    <datebox id="birthdayBox" hflex="1" constraint="no empty, no today, no future"/>
+                </row>
+                <row spans="2" align="center">
+                    <hlayout>
+                        <checkbox id="acceptTermBox"/>
+                        Accept Term of Use
+                    </hlayout>
+                </row>
+                <row spans="2" align="right">
+                    <hlayout>
+                        <button id="resetButton" label="Reset"/>
+                        <button id="submitButton" label="Submit" disabled="true"/>
+                    </hlayout>
+                </row>
+            </rows>
+        </grid>
+    </window>
+    <script src="/scripts/util/pwd_meter.js" ></script>
+</zk>

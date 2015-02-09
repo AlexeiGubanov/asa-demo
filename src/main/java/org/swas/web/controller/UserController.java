@@ -13,7 +13,6 @@ import org.swas.dao.util.ListParams;
 import org.swas.dao.util.PagedList;
 import org.swas.domain.User;
 import org.swas.domain.UserStatus;
-import org.swas.service.ActivationUrlGenerator;
 import org.swas.service.Result;
 import org.swas.service.UserService;
 import org.swas.util.MessagesHelper;
@@ -261,24 +260,4 @@ public class UserController {
     return Response.success("");
   }
 
-  private class ActivationUrlGeneratorImpl implements ActivationUrlGenerator {
-    private HttpServletRequest request;
-
-    private ActivationUrlGeneratorImpl(HttpServletRequest request) {
-      this.request = request;
-    }
-
-    public String generateUrl(User user) {
-      String template = SystemParameters.getParam("accountActivation.url");
-      String serverName = request.getServerName();
-      if (request.getServerPort() != 80) {
-        serverName += ":" + request.getServerPort();
-      }
-      template = template.replaceAll("\\{server\\}", serverName);
-      template = template.replaceAll("\\{context\\}", request.getContextPath());
-      template = template.replaceAll("\\{activateUrl\\}", UrlHelper.URL_ACTIVATE);
-      template = template.replaceAll("\\{activationCode\\}", user.getActivationCode());
-      return template;
-    }
-  }
 }

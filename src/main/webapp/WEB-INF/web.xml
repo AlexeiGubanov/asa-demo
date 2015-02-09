@@ -26,7 +26,12 @@
     <!--</filter-mapping>-->
 
     <listener>
+        <description>The ContextLoaderListener reads Spring configuration, and default location is WEB-INF/applicationContext.xml.</description>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <description>Use RequestContextListener to support web-scoped beans (request, session, global session).</description>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
 
 
