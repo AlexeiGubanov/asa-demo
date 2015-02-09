@@ -80,6 +80,16 @@
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: org.jdom:jdom:1.1" />
           <element id="library" level="project" name="Maven: net.sf.xss-html-filter:xss-html-filter:1.5" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkbind:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zul:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zk:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zweb:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zcommon:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zel:7.0.3" />
+          <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.5" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:7.0.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
