@@ -4,26 +4,26 @@ import org.apache.commons.lang3.StringUtils;
 
 public abstract class ReCaptchaAwareForm {
 
-    private String recaptchaChallenge;
-    private String recaptchaResponse;
+  private String recaptchaChallenge;
+  private String recaptchaResponse;
 
-    public String getRecaptchaChallenge() {
-        return recaptchaChallenge;
-    }
+  public String getRecaptchaChallenge() {
+    return recaptchaChallenge;
+  }
 
-    public void setRecaptchaChallenge(String recaptchaChallenge) {
-        this.recaptchaChallenge = recaptchaChallenge;
-    }
+  public void setRecaptchaChallenge(String recaptchaChallenge) {
+    this.recaptchaChallenge = recaptchaChallenge;
+  }
 
-    public String getRecaptchaResponse() {
-        return recaptchaResponse;
-    }
+  public String getRecaptchaResponse() {
+    return recaptchaResponse;
+  }
 
-    public void setRecaptchaResponse(String recaptchaResponse) {
-        this.recaptchaResponse = recaptchaResponse;
-    }
+  public void setRecaptchaResponse(String recaptchaResponse) {
+    this.recaptchaResponse = recaptchaResponse;
+  }
 
-    public boolean haveRecaptcha() {
-        return StringUtils.isNotEmpty(recaptchaChallenge) && StringUtils.isNotEmpty(recaptchaResponse);
-    }
+  public boolean haveRecaptcha() {
+    return StringUtils.isNotEmpty(recaptchaChallenge) && StringUtils.isNotEmpty(recaptchaResponse);
+  }
 }

@@ -4,17 +4,16 @@ import java.util.ResourceBundle;
 
 public class SystemParameters {
 
-    private static final ResourceBundle PARAMETERS;
+  private static final ResourceBundle PARAMETERS;
 
-    public static final String LOCALE;
+  public static final String LOCALE;
 
-    static {
-        PARAMETERS = ResourceBundle.getBundle(
-                "properties.system");
-        LOCALE = getParam("locale");
-    }
+  static {
+    PARAMETERS = ResourceBundle.getBundle("properties.system");
+    LOCALE = getParam("locale");
+  }
 
-    public static String getParam(String name) {
-        return PARAMETERS.getString(name);
-    }
+  public static String getParam(String name) {
+    return PARAMETERS.getString(name);
+  }
 }

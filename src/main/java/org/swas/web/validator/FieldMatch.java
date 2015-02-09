@@ -17,20 +17,20 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 @NotNull
 public @interface FieldMatch {
-    String message() default "{FieldMatch.message}";
+  String message() default "{FieldMatch.message}";
 
-    Class<?>[] groups() default {};
+  Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default {};
+  Class<? extends Payload>[] payload() default {};
 
-    String original();
+  String original();
 
-    String compared();
+  String compared();
 
-    @Target({TYPE, ANNOTATION_TYPE})
-    @Retention(RUNTIME)
-    @Documented
-    @interface List {
-        FieldMatch[] value();
-    }
+  @Target({TYPE, ANNOTATION_TYPE})
+  @Retention(RUNTIME)
+  @Documented
+  @interface List {
+    FieldMatch[] value();
+  }
 }

@@ -13,25 +13,25 @@ import java.util.Map;
 @Controller
 public class CommonController {
 
-    private String timezoneCached;
+  private String timezoneCached;
 
-    @RequestMapping(value = UrlHelper.URL_ADMIN_VIEW, method = RequestMethod.GET)
-    public String adminView(HttpServletRequest request) {
-        return ViewHelper.VIEW_ADMIN;
-    }
+  @RequestMapping(value = UrlHelper.URL_ADMIN_VIEW, method = RequestMethod.GET)
+  public String adminView(HttpServletRequest request) {
+    return ViewHelper.VIEW_ADMIN;
+  }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String rootView(HttpServletRequest request, Map<String, Object> model) {
-        request.setAttribute("index", true);
-        return "index";
-    }
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public String rootView(HttpServletRequest request, Map<String, Object> model) {
+    request.setAttribute("index", true);
+    return "index";
+  }
 
-    @RequestMapping(value = UrlHelper.URL_ACCESS_DENIED, method = RequestMethod.GET)
-    public String accessDeniedView(@RequestParam(required = false) String redirectTo, HttpServletRequest request) {
-        if (redirectTo != null)
-            request.setAttribute("redirectTo", redirectTo);
-        return ViewHelper.VIEW_ACCESS_DENIED;
-    }
+  @RequestMapping(value = UrlHelper.URL_ACCESS_DENIED, method = RequestMethod.GET)
+  public String accessDeniedView(@RequestParam(required = false) String redirectTo, HttpServletRequest request) {
+    if (redirectTo != null)
+      request.setAttribute("redirectTo", redirectTo);
+    return ViewHelper.VIEW_ACCESS_DENIED;
+  }
 
 
 }

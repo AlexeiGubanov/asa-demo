@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface UrlPatternMatcher {
 
-    /**
-     * Check that url string matches.
-     *
-     * @param path - string url
-     * @return true if matches
-     */
-    boolean isMatch(String path);
+  /**
+   * Check that url string matches.
+   *
+   * @param path - string url
+   * @return true if matches
+   */
+  boolean isMatch(String path);
 
-    /**
-     * Check that request url matches.
-     *
-     * @param request - request
-     * @return true if matches
-     */
-    boolean isMatch(HttpServletRequest request);
+  /**
+   * Check that request url matches.
+   *
+   * @param request - request
+   * @return true if matches
+   */
+  boolean isMatch(HttpServletRequest request);
 }
