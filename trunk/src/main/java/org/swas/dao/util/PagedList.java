@@ -9,9 +9,6 @@ import java.util.ListIterator;
 /**
  * Paged functionality decorator for {@link List} instances. <br/>
  * Adds {@link #getTotalCount()}  param.
- *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 @SuppressWarnings({"unchecked"})
 public class PagedList<T> implements List<T>, Serializable {

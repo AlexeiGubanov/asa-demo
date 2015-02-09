@@ -10,10 +10,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 01.12.11
- */
 public class JSONUtils {
 
     public static List parseJson(String data) {

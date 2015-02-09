@@ -2,10 +2,6 @@ package org.swas.web.dto.params;
 
 import java.util.Date;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 19.12.11
- */
 public class UserListRequestParams extends ListRequestParams {
 
     private String email;

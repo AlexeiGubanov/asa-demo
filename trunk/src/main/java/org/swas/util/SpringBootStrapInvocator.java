@@ -2,10 +2,6 @@ package org.swas.util;
 
 import org.springframework.beans.factory.InitializingBean;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 10.11.11
- */
 public class SpringBootStrapInvocator implements InitializingBean {
 
 

@@ -2,10 +2,7 @@ package org.swas.web.dto.form;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 07.12.11
- */
+
 public class SignInForm extends ReCaptchaAwareForm {
 
     @NotBlank

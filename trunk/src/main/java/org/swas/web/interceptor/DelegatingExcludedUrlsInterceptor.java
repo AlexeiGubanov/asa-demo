@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletResponse;
  * Adapter that intercept {@link #preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, Object)} method
  * and don't allow next processing if current url is excluded.
  * Used for add 'excluded url' features to existing interceptors.
- *
- * @author GubanovAS
- *         Date: 24.08.11
  */
 public class DelegatingExcludedUrlsInterceptor implements HandlerInterceptor {
 

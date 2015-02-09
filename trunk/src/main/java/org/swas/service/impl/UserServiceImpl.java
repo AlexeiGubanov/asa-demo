@@ -24,10 +24,6 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.util.*;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 @Service
 public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implements UserService {
 
@@ -58,8 +54,8 @@ public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implement
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setTo(user.getEmail());
 
-        //WARNING принудительно вызываем установка заголовка письма из конфига, иначе письмо без отравителя
-        // возможно баг JavaMail API
+        //WARNING пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ JavaMail API
         message.setFrom();
 
 

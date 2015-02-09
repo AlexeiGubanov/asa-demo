@@ -5,8 +5,6 @@ import org.swas.domain.User;
 /**
  * Sample custom dao extending of {@link GenericDao}
  *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public interface UserDao extends GenericDao<User, Long> {
 

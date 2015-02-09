@@ -2,10 +2,6 @@ package org.swas.web.dto;
 
 import org.swas.domain.User;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 19.12.11
- */
 public class UserDto {
 
     private Long id;

@@ -11,10 +11,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
- */
 public class GenericDaoServiceImpl<T extends Persistable<ID>, ID extends Serializable> implements GenericDaoService<T, ID> {
 
 

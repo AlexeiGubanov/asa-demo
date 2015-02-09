@@ -2,10 +2,6 @@ package org.swas.web.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author GubanovAS
- *         Date: 24.08.11
- */
 public interface ExcludedUrlsAware {
 
     /**

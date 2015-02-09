@@ -4,10 +4,6 @@ import org.springframework.context.MessageSource;
 
 import java.util.Locale;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class MessagesHelperImpl implements MessagesHelper {
 
     private MessageSource messageSource;

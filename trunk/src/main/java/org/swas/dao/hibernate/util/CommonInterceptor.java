@@ -16,8 +16,6 @@ import java.util.Iterator;
  *  <li>isTransient override (set id to null, so id must be regenerated on save).</li>
  *  <li>lastUpdate property update before flushing</li>
  *  </ul>
- * @author Alexei.Gubanov@gmail.com
- *         Date: 19.01.12
  */
 public class CommonInterceptor extends EmptyInterceptor {
 

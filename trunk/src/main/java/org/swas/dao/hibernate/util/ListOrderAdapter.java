@@ -6,8 +6,6 @@ import org.swas.dao.util.ListOrder;
 /**
  * Adapter that converts {@link ListOrder} to {@link Order}
  *
- * @author Alexei.Gubanov@gmail.com
- *         Date: 09.11.11
  */
 public class ListOrderAdapter {
 

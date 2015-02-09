@@ -5,10 +5,6 @@ import org.swas.dao.util.ListParams;
 
 import java.util.Map;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 25.11.11
- */
 public class ListRequestParams {
 
     private static final Long maxPerRequest = 1000l;
@@ -74,7 +70,7 @@ public class ListRequestParams {
     }
 
     /**
-     * Заполняет начальными данными поля offset и limit если явно не задано
+     * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ offset пїЅ limit пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
      */
     public void fillUpParamsDefault() {
         offset = (offset == null) ? 0 : offset;
