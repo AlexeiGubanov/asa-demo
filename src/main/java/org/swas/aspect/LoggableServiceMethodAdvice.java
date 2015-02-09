@@ -8,10 +8,6 @@ import org.springframework.core.Ordered;
 
 import java.util.Arrays;
 
-/**
- * @author Alexei.Gubanov@gmail.com
- *         Date: 08.12.11
- */
 public class LoggableServiceMethodAdvice implements Ordered, MethodInterceptor {
 
     private int order = Integer.MAX_VALUE;
