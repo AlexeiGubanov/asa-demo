@@ -8,11 +8,23 @@
     <name>Spring Web Application Skeleton</name>
 
     <repositories>
+        <!-- JBoss repository -->
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        </repository>
         <!-- Repository for xss-html-filter - library for preventing XSS-attacks -->
         <repository>
             <id>xss-html-filter releases</id>
             <name>xss-html-filter Releases Repository</name>
             <url>http://xss-html-filter.sf.net/releases</url>
+        </repository>
+        <!-- ZK -->
+        <repository>
+            <id>ZK CE</id>
+            <name>ZK CE Repository</name>
+            <url>http://mavensync.zkoss.org/maven2</url>
         </repository>
     </repositories>
 
@@ -288,6 +300,29 @@
             <version>1.5</version>
         </dependency>
 
+        <!-- ZK -->
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zkbind</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zul</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zkplus</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zhtml</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+        <!-- #ZK -->
+
     </dependencies>
     <build>
         <finalName>swas</finalName>
@@ -326,6 +361,7 @@
         <log4j.version>1.2.17</log4j.version>
         <apache-tiles.version>2.2.2</apache-tiles.version>
         <jackson.version>1.9.10</jackson.version>
+        <zk.version>7.0.3</zk.version>
     </properties>
 
     <developers>
