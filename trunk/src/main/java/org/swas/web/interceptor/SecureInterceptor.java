@@ -14,32 +14,32 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SecureInterceptor extends HandlerInterceptorAdapter {
 
-    private UrlPatternMatcher authRequiredMatcher = new AntUrlPatternMatcher(new String[]{"/admin/**"});
+  private UrlPatternMatcher authRequiredMatcher = new AntUrlPatternMatcher(new String[]{"/admin/**"});
 
-    private UrlPathHelper urlPathHelper = new UrlPathHelper();
+  private UrlPathHelper urlPathHelper = new UrlPathHelper();
 
 
-    public void setAuthRequiredMatcher(UrlPatternMatcher authRequiredMatcher) {
-        this.authRequiredMatcher = authRequiredMatcher;
+  public void setAuthRequiredMatcher(UrlPatternMatcher authRequiredMatcher) {
+    this.authRequiredMatcher = authRequiredMatcher;
+  }
+
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+    User u = (User) WebUtils.getSessionAttribute(request, SessionAttribute.PROFILE);
+    String path = urlPathHelper.getPathWithinApplication(request);
+
+
+    if (u == null) {
+      if (authRequiredMatcher.isMatch(path)) {
+        if (path.startsWith("/"))
+          path = path.substring(1);
+        request.setAttribute("redirectTo", path);
+        response.sendRedirect(request.getContextPath() + UrlHelper.URL_ACCESS_DENIED + "?redirectTo=" + path);
+        return false;
+      }
     }
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
-        User u = (User) WebUtils.getSessionAttribute(request, SessionAttribute.PROFILE);
-        String path = urlPathHelper.getPathWithinApplication(request);
-
-
-        if (u == null) {
-            if (authRequiredMatcher.isMatch(path)) {
-                if (path.startsWith("/"))
-                    path = path.substring(1);
-                request.setAttribute("redirectTo", path);
-                response.sendRedirect(request.getContextPath() + UrlHelper.URL_ACCESS_DENIED + "?redirectTo=" + path);
-                return false;
-            }
-        }
-
-        return true;
-    }
+    return true;
+  }
 }

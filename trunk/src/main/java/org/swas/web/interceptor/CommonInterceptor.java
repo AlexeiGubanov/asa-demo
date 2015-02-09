@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 public class CommonInterceptor extends HandlerInterceptorAdapter {
 
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (WebUtils.getSessionAttribute(request, SessionAttribute.CONTEXT) == null) {
-            SessionAttribute.CONTEXT_VAL = request.getContextPath();
-            WebUtils.setSessionAttribute(request, SessionAttribute.CONTEXT, SessionAttribute.CONTEXT_VAL);
-        }
-
-        return true;
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    if (WebUtils.getSessionAttribute(request, SessionAttribute.CONTEXT) == null) {
+      SessionAttribute.CONTEXT_VAL = request.getContextPath();
+      WebUtils.setSessionAttribute(request, SessionAttribute.CONTEXT, SessionAttribute.CONTEXT_VAL);
     }
 
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    return true;
+  }
 
-    }
+  @Override
+  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+
+  }
 }

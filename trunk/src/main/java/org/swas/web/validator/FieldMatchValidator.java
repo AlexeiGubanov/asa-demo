@@ -8,26 +8,24 @@ import javax.validation.ConstraintValidatorContext;
 
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
 
-    private String original;
+  private String original;
 
-    private String compared;
+  private String compared;
 
-    public void initialize(FieldMatch constraintAnnotation) {
-        this.original = constraintAnnotation.original();
-        this.compared = constraintAnnotation.compared();
+  public void initialize(FieldMatch constraintAnnotation) {
+    this.original = constraintAnnotation.original();
+    this.compared = constraintAnnotation.compared();
+  }
+
+  public boolean isValid(Object value, ConstraintValidatorContext context) {
+    ConfigurablePropertyAccessor pa = PropertyAccessorFactory.forDirectFieldAccess(value);
+    final Object origObj = pa.getPropertyValue(original);
+    final Object compObj = pa.getPropertyValue(compared);
+
+    boolean matches = origObj == null && compObj == null || compObj != null && compObj.equals(origObj);
+    if (!matches) {
+      context.buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate()).addNode(this.compared).addConstraintViolation();
     }
-
-    public boolean isValid(Object value, ConstraintValidatorContext context) {
-        ConfigurablePropertyAccessor pa = PropertyAccessorFactory.forDirectFieldAccess(value);
-        final Object origObj = pa.getPropertyValue(original);
-        final Object compObj = pa.getPropertyValue(compared);
-
-        boolean matches = origObj == null && compObj == null || compObj != null && compObj.equals(origObj);
-        if (!matches) {
-            context.buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate())
-                    .addNode(this.compared)
-                    .addConstraintViolation();
-        }
-        return matches;
-    }
+    return matches;
+  }
 }

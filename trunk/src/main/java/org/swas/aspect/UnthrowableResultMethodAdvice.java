@@ -23,30 +23,26 @@ import org.swas.service.Result;
  */
 public class UnthrowableResultMethodAdvice implements Ordered, MethodInterceptor {
 
-    private int order = Integer.MAX_VALUE;
+  private int order = Integer.MAX_VALUE;
 
-    private static final Logger log = LoggerFactory.getLogger(UnthrowableResultMethodAdvice.class);
+  private static final Logger log = LoggerFactory.getLogger(UnthrowableResultMethodAdvice.class);
 
-    public Object invoke(MethodInvocation invocation) throws Throwable {
-        try {
-            return invocation.proceed();
-        } catch (Throwable t) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("Error during execution ")
-                    .append(invocation.getMethod().getDeclaringClass())
-                    .append(".")
-                    .append(invocation.getMethod().getName())
-                    .append(": ");
-            log.error(sb.toString(), t);
-            return new Result(t);
-        }
+  public Object invoke(MethodInvocation invocation) throws Throwable {
+    try {
+      return invocation.proceed();
+    } catch (Throwable t) {
+      StringBuilder sb = new StringBuilder();
+      sb.append("Error during execution ").append(invocation.getMethod().getDeclaringClass()).append(".").append(invocation.getMethod().getName()).append(": ");
+      log.error(sb.toString(), t);
+      return new Result(t);
     }
+  }
 
-    public void setOrder(int order) {
-        this.order = order;
-    }
+  public void setOrder(int order) {
+    this.order = order;
+  }
 
-    public int getOrder() {
-        return order;
-    }
+  public int getOrder() {
+    return order;
+  }
 }

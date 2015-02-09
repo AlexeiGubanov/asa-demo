@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CharacterEncodingInterceptor extends HandlerInterceptorAdapter {
 
-    private String encoding = "UTF-8";
+  private String encoding = "UTF-8";
 
-    public void setEncoding(String encoding) {
-        this.encoding = encoding;
-    }
+  public void setEncoding(String encoding) {
+    this.encoding = encoding;
+  }
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        request.setCharacterEncoding(encoding);
-        return true;
-    }
+  @Override
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    request.setCharacterEncoding(encoding);
+    return true;
+  }
 
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-//        response.setCharacterEncoding(encoding);
-    }
+  @Override
+  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    //        response.setCharacterEncoding(encoding);
+  }
 }

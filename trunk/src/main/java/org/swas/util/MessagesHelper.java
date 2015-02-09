@@ -6,21 +6,21 @@ import java.util.Locale;
 
 public interface MessagesHelper {
 
-    MessageSource getMessageSource();
+  MessageSource getMessageSource();
 
-    String getMessage(String code, Locale locale);
+  String getMessage(String code, Locale locale);
 
-    String getMessage(String code, String locale);
+  String getMessage(String code, String locale);
 
-    String getMessage(String code, String defaultMsg, Locale locale);
+  String getMessage(String code, String defaultMsg, Locale locale);
 
-    String getMessage(String code, String defaultMsg, String locale);
+  String getMessage(String code, String defaultMsg, String locale);
 
-    String getMessage(String code, Object[] args, Locale locale);
+  String getMessage(String code, Object[] args, Locale locale);
 
-    String getMessage(String code, Object[] args, String locale);
+  String getMessage(String code, Object[] args, String locale);
 
-    String getMessage(String code, Object[] args, String defaultMsg, Locale locale);
+  String getMessage(String code, Object[] args, String defaultMsg, Locale locale);
 
-    String getMessage(String code, Object[] args, String defaultMsg, String locale);
+  String getMessage(String code, Object[] args, String defaultMsg, String locale);
 }

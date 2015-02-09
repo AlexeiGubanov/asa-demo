@@ -10,20 +10,20 @@ import java.util.List;
  * Basic service interface for dao-aware services.
  */
 public interface GenericDaoService<T extends Persistable<ID>, ID extends Serializable> {
-    T get(ID id);
+  T get(ID id);
 
-    void refresh(T... entities);
+  void refresh(T... entities);
 
-    List<T> findAll();
+  List<T> findAll();
 
-    List<T> findAll(ListParams params);
+  List<T> findAll(ListParams params);
 
-    void delete(ID... ids);
+  void delete(ID... ids);
 
-    void delete(T... entities);
+  void delete(T... entities);
 
-    Result createOrUpdate(T... entities);
+  Result createOrUpdate(T... entities);
 
-    Result create(T... entities);
+  Result create(T... entities);
 
 }

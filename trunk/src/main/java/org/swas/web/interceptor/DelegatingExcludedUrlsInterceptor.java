@@ -13,31 +13,31 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DelegatingExcludedUrlsInterceptor implements HandlerInterceptor {
 
-    private ExcludedUrlsAware urlHelper;
+  private ExcludedUrlsAware urlHelper;
 
-    private HandlerInterceptor delegate;
+  private HandlerInterceptor delegate;
 
-    public void setUrlHelper(ExcludedUrlsAware urlHelper) {
-        this.urlHelper = urlHelper;
-    }
+  public void setUrlHelper(ExcludedUrlsAware urlHelper) {
+    this.urlHelper = urlHelper;
+  }
 
-    public void setDelegate(HandlerInterceptor delegate) {
-        this.delegate = delegate;
-    }
+  public void setDelegate(HandlerInterceptor delegate) {
+    this.delegate = delegate;
+  }
 
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return urlHelper.isExcluded(request) || delegate.preHandle(request, response, handler);
-    }
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    return urlHelper.isExcluded(request) || delegate.preHandle(request, response, handler);
+  }
 
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        if (!urlHelper.isExcluded(request))
-            delegate.postHandle(request, response, handler, modelAndView);
-    }
+  public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    if (!urlHelper.isExcluded(request))
+      delegate.postHandle(request, response, handler, modelAndView);
+  }
 
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        if (!urlHelper.isExcluded(request))
-            delegate.afterCompletion(request, response, handler, ex);
-    }
+  public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+    if (!urlHelper.isExcluded(request))
+      delegate.afterCompletion(request, response, handler, ex);
+  }
 
 
 }

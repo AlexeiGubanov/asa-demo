@@ -12,41 +12,41 @@ import java.util.Map;
 
 public class JSONUtils {
 
-    public static List parseJson(String data) {
-        JSONParser parser = new JSONParser();
-        try {
-            Object o = parser.parse(data);
-            if (o != null) {
-                if (o instanceof List) {
-                    return (List) o;
-                } else if (o instanceof Map) {
-                    return Collections.singletonList(o);
-                }
-            }
-        } catch (ParseException ignored) {
-            //foo
+  public static List parseJson(String data) {
+    JSONParser parser = new JSONParser();
+    try {
+      Object o = parser.parse(data);
+      if (o != null) {
+        if (o instanceof List) {
+          return (List) o;
+        } else if (o instanceof Map) {
+          return Collections.singletonList(o);
         }
-        return new ArrayList<Map<String, ?>>();
+      }
+    } catch (ParseException ignored) {
+      //foo
     }
+    return new ArrayList<Map<String, ?>>();
+  }
 
-    public static Map parseJsonSingle(String data) {
-        JSONParser parser = new JSONParser();
-        try {
-            Object o = parser.parse(data);
-            if (o != null && o instanceof Map) {
-                return (Map) o;
-            }
-        } catch (ParseException ignored) {
-            //foo
-        }
-        return null;
+  public static Map parseJsonSingle(String data) {
+    JSONParser parser = new JSONParser();
+    try {
+      Object o = parser.parse(data);
+      if (o != null && o instanceof Map) {
+        return (Map) o;
+      }
+    } catch (ParseException ignored) {
+      //foo
     }
+    return null;
+  }
 
-    public static String asJson(List list) {
-        return JSONArray.toJSONString(list);
-    }
+  public static String asJson(List list) {
+    return JSONArray.toJSONString(list);
+  }
 
-    public static String asJson(Map map) {
-        return JSONObject.toJSONString(map);
-    }
+  public static String asJson(Map map) {
+    return JSONObject.toJSONString(map);
+  }
 }

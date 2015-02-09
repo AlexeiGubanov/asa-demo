@@ -9,26 +9,26 @@ import java.util.Locale;
 
 public class RedirectWithoutModelAttributesViewResolver implements ViewResolver, Ordered {
 
-    // Have a highest priority by default
-    private int order = Integer.MIN_VALUE;
+  // Have a highest priority by default
+  private int order = Integer.MIN_VALUE;
 
-    // Uses this prefix to avoid interference with the default behaviour
-    public static final String REDIRECT_URL_PREFIX = "redirectWithoutModel:";
+  // Uses this prefix to avoid interference with the default behaviour
+  public static final String REDIRECT_URL_PREFIX = "redirectWithoutModel:";
 
-    public View resolveViewName(String viewName, Locale locale) throws Exception {
-        if (viewName.startsWith(REDIRECT_URL_PREFIX)) {
-            String redirectUrl = viewName.substring(REDIRECT_URL_PREFIX.length());
-            return new RedirectView(redirectUrl, true, true, false);
-        }
-        return null;
+  public View resolveViewName(String viewName, Locale locale) throws Exception {
+    if (viewName.startsWith(REDIRECT_URL_PREFIX)) {
+      String redirectUrl = viewName.substring(REDIRECT_URL_PREFIX.length());
+      return new RedirectView(redirectUrl, true, true, false);
     }
+    return null;
+  }
 
-    public int getOrder() {
-        return order;
-    }
+  public int getOrder() {
+    return order;
+  }
 
-    public void setOrder(int order) {
-        this.order = order;
-    }
+  public void setOrder(int order) {
+    this.order = order;
+  }
 }
 

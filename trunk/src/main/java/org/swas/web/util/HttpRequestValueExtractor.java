@@ -4,17 +4,17 @@ import javax.servlet.http.HttpServletRequest;
 
 public class HttpRequestValueExtractor implements ValueExtractor {
 
-    private HttpServletRequest request;
+  private HttpServletRequest request;
 
-    public HttpRequestValueExtractor(HttpServletRequest request) {
-        if (request == null)
-            throw new IllegalStateException("Param 'request' can't be null");
-        this.request = request;
-    }
+  public HttpRequestValueExtractor(HttpServletRequest request) {
+    if (request == null)
+      throw new IllegalStateException("Param 'request' can't be null");
+    this.request = request;
+  }
 
-    public Object extractValue(String name) {
-        return request.getParameter(name);
-    }
+  public Object extractValue(String name) {
+    return request.getParameter(name);
+  }
 
 
 }

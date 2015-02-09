@@ -14,37 +14,34 @@ import java.util.Map;
 public class DynamicTilesView extends AbstractUrlBasedView {
 
 
-    final DynamicTilesViewProcessor dynamicTilesViewProcessor = new DynamicTilesViewProcessor();
+  final DynamicTilesViewProcessor dynamicTilesViewProcessor = new DynamicTilesViewProcessor();
 
 
-    protected void renderMergedOutputModel(Map model, HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        ServletContext servletContext = getServletContext();
-        TilesContainer container = ServletUtil.getContainer(servletContext);
-        if (container == null) {
-            throw new ServletException("Tiles container is not initialized. " +
-                    "Have you added a TilesConfigurer to your web application context?");
-        }
-
-        exposeModelAsRequestAttributes(model, request);
-
-        try {
-            dynamicTilesViewProcessor.renderMergedOutputModel(getBeanName(), getUrl(),
-                    servletContext, request, response, container);
-        } catch (CannotRenderException ex) {
-            response.sendError(HttpServletResponse.SC_NOT_FOUND);
-        }
+  protected void renderMergedOutputModel(Map model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    ServletContext servletContext = getServletContext();
+    TilesContainer container = ServletUtil.getContainer(servletContext);
+    if (container == null) {
+      throw new ServletException("Tiles container is not initialized. " + "Have you added a TilesConfigurer to your web application context?");
     }
 
-    public void setTilesDefinitionName(String tilesDefinitionName) {
-        dynamicTilesViewProcessor.setTilesDefinitionName(tilesDefinitionName);
-    }
+    exposeModelAsRequestAttributes(model, request);
 
-    public void setTilesBodyAttributeName(String tilesBodyAttributeName) {
-        dynamicTilesViewProcessor.setTilesBodyAttributeName(tilesBodyAttributeName);
+    try {
+      dynamicTilesViewProcessor.renderMergedOutputModel(getBeanName(), getUrl(), servletContext, request, response, container);
+    } catch (CannotRenderException ex) {
+      response.sendError(HttpServletResponse.SC_NOT_FOUND);
     }
+  }
 
-    public void setTilesDefinitionDelimiter(String tilesDefinitionDelimiter) {
-        dynamicTilesViewProcessor.setTilesDefinitionDelimiter(tilesDefinitionDelimiter);
-    }
+  public void setTilesDefinitionName(String tilesDefinitionName) {
+    dynamicTilesViewProcessor.setTilesDefinitionName(tilesDefinitionName);
+  }
+
+  public void setTilesBodyAttributeName(String tilesBodyAttributeName) {
+    dynamicTilesViewProcessor.setTilesBodyAttributeName(tilesBodyAttributeName);
+  }
+
+  public void setTilesDefinitionDelimiter(String tilesDefinitionDelimiter) {
+    dynamicTilesViewProcessor.setTilesDefinitionDelimiter(tilesDefinitionDelimiter);
+  }
 }

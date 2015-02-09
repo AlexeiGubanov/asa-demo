@@ -10,32 +10,26 @@ import java.util.Arrays;
 
 public class LoggableServiceMethodAdvice implements Ordered, MethodInterceptor {
 
-    private int order = Integer.MAX_VALUE;
+  private int order = Integer.MAX_VALUE;
 
-    private static final Logger log = LoggerFactory.getLogger(LoggableServiceMethodAdvice.class);
+  private static final Logger log = LoggerFactory.getLogger(LoggableServiceMethodAdvice.class);
 
-    public void setOrder(int order) {
-        this.order = order;
-    }
+  public void setOrder(int order) {
+    this.order = order;
+  }
 
-    public Object invoke(MethodInvocation invocation) throws Throwable {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Calling ")
-                .append(invocation.getMethod().getDeclaringClass())
-                .append(".")
-                .append(invocation.getMethod().getName())
-                .append("(")
-                .append(Arrays.toString(invocation.getArguments()))
-                .append(") = ");
-        Object r = invocation.proceed();
-        sb.append(r);
-        log.info(sb.toString());
-        return r;
-    }
+  public Object invoke(MethodInvocation invocation) throws Throwable {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Calling ").append(invocation.getMethod().getDeclaringClass()).append(".").append(invocation.getMethod().getName()).append("(").append(Arrays.toString(invocation.getArguments())).append(") = ");
+    Object r = invocation.proceed();
+    sb.append(r);
+    log.info(sb.toString());
+    return r;
+  }
 
-    public int getOrder() {
-        return order;
-    }
+  public int getOrder() {
+    return order;
+  }
 }
 
 

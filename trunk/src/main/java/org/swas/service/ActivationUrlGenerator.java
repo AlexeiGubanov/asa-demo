@@ -4,5 +4,5 @@ import org.swas.domain.User;
 
 public interface ActivationUrlGenerator {
 
-    String generateUrl(User user);
+  String generateUrl(User user);
 }
