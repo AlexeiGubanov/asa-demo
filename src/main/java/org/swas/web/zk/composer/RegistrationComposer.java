@@ -65,6 +65,14 @@ public class RegistrationComposer extends SelectorComposer<Component> {
     newUser.setPsw(passwordBox.getValue());
     //save user input into newUser object
     Result r = userService.register(newUser, request.getLocale(), new ActivationUrlGeneratorImpl(request));
+    if (r.isOk()) {
+      Messagebox.show("Success", "Error", Messagebox.OK, Messagebox.ERROR);
+//      Executions.sendRedirect("/chapter8/login.zul");
+      return;
+    } else {
+      Messagebox.show(r.getMsg(), "Error", Messagebox.OK, Messagebox.ERROR);
+      // show errors
+    }
   }
 
 
