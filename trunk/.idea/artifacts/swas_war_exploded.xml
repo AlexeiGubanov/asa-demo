@@ -80,22 +80,22 @@
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: org.jdom:jdom:1.1" />
           <element id="library" level="project" name="Maven: net.sf.xss-html-filter:xss-html-filter:1.5" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkbind:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkbind:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:7.0.0" />
           <element id="library" level="project" name="Maven: org.zkoss.maven:yuicompressor-maven-plugin-zk:1.2.0" />
           <element id="library" level="project" name="Maven: com.yahoo.platform.yui:yuicompressor:2.4.7" />
           <element id="library" level="project" name="Maven: rhino:js:1.6R7" />
           <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-utils:1.5.1" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zul:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zk:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zweb:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zcommon:7.0.3" />
-          <element id="library" level="project" name="Maven: org.zkoss.common:zel:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zul:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zk:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zweb:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zcommon:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.common:zel:7.0.0" />
           <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.5" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkmax:7.0.3-Eval" />
-          <element id="library" level="project" name="Maven: org.zkoss.zk:zkex:7.0.3-Eval" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkmax:7.0.0" />
+          <element id="library" level="project" name="Maven: org.zkoss.zk:zkex:7.0.0" />
           <element id="library" level="project" name="Maven: net.sf.jasperreports:jasperreports:4.5.1" />
           <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.7" />
           <element id="library" level="project" name="Maven: org.bouncycastle:bctsp-jdk14:1.38" />

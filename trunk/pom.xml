@@ -342,7 +342,7 @@
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkmax</artifactId>
-            <version>7.0.3-Eval</version>
+            <version>7.0.0</version>
         </dependency>
 
         <!--<dependency>-->
@@ -390,7 +390,7 @@
         <log4j.version>1.2.17</log4j.version>
         <apache-tiles.version>2.2.2</apache-tiles.version>
         <jackson.version>1.9.10</jackson.version>
-        <zk.version>7.0.3</zk.version>
+        <zk.version>7.0.0</zk.version> <!-- 7.0.3 -->
     </properties>
 
     <developers>
