@@ -3,7 +3,7 @@
 <?link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
 <!-- Google Open Sans font -->
 <!-- Load fonts from local -->
-<?link href="/resources/css/fonts.css" rel="stylesheet" type="text/css"?>
+<!--<?link href="/resources/css/fonts.css" rel="stylesheet" type="text/css"?>-->
 <!-- Unmark if we want to use fonts from google server
 <?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
 -->
