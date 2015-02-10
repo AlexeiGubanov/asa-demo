@@ -53,24 +53,24 @@
         </menubar>
     </div>
 
-    <!--<navbar orient="vertical" sclass="sidebar">-->
-        <!--<navitem iconSclass="icon icon-white icon-home" label="Dashboard" selected="true"/>-->
-        <!--<nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">-->
-            <!--<navitem label="Common elements"/>-->
-            <!--<navitem label="Validation"/>-->
-            <!--<navitem label="Wizard"/>-->
-        <!--</nav>-->
-        <!--<navitem iconSclass="icon icon-white icon-tint" label="Buttons &amp; icons"/>-->
-        <!--<navitem iconSclass="icon icon-white icon-pencil" label="Interface elements"/>-->
-        <!--<navitem iconSclass="icon icon-white icon-th" label="Tables"/>-->
-        <!--<navitem iconSclass="icon icon-white icon-th-list" label="Grid Layout"/>-->
-        <!--<nav iconSclass="icon icon-white icon-file" label="Sample pages" badgeText="4">-->
-            <!--<navitem label="Invoice"/>-->
-            <!--<navitem label="Support chat"/>-->
-            <!--<navitem label="Calendar"/>-->
-            <!--<navitem label="Gallery"/>-->
-        <!--</nav>-->
-    <!--</navbar>-->
+    <navbar orient="vertical" sclass="sidebar">
+        <navitem iconSclass="icon icon-white icon-home" label="Dashboard" selected="true"/>
+        <nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">
+            <navitem label="Common elements"/>
+            <navitem label="Validation"/>
+            <navitem label="Wizard"/>
+        </nav>
+        <navitem iconSclass="icon icon-white icon-tint" label="Buttons &amp; icons"/>
+        <navitem iconSclass="icon icon-white icon-pencil" label="Interface elements"/>
+        <navitem iconSclass="icon icon-white icon-th" label="Tables"/>
+        <navitem iconSclass="icon icon-white icon-th-list" label="Grid Layout"/>
+        <nav iconSclass="icon icon-white icon-file" label="Sample pages" badgeText="4">
+            <navitem label="Invoice"/>
+            <navitem label="Support chat"/>
+            <navitem label="Calendar"/>
+            <navitem label="Gallery"/>
+        </nav>
+    </navbar>
 
     <div sclass="style-switcher">
         <n:i class="icon-arrow-left icon-white"></n:i> <label>Style:</label>
@@ -301,52 +301,43 @@ if (zk.ie && zk.ie < 8) {
                 <!--</label>-->
             <!--</div>-->
         <!--</north>-->
-        <!--&lt;!&ndash; Sidebar &ndash;&gt;-->
-        <!--<west width="200px" border="0" flex="true" splittable="true" margins="0,5,0,0">-->
-            <!--<vlayout spacing="0">-->
-                <!--&lt;!&ndash;<navbar mold="bs-pills" orient="vertical">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<navitem label="Home" selected="true" />&ndash;&gt;-->
-                    <!--&lt;!&ndash;<navitem label="Profile" />&ndash;&gt;-->
-                    <!--&lt;!&ndash;<navitem label="Messages" />&ndash;&gt;-->
-                <!--&lt;!&ndash;</navbar>&ndash;&gt;-->
+
+        <!--<east width="130px" title="Quick Links" flex="true">-->
+            <!--<vlayout>-->
+                <!--<html>-->
+                    <!--<![CDATA[ <ul> <li>Tutorial</li> <li>Docs</li>-->
+                        <!--<li>ZK vs GWT</li> <li>ZK vs Ajax JSF</li>-->
+                        <!--<li>Forum</li> <li>FAQ</li> <li>Contact us</li>-->
+                        <!--</ul> ]]>-->
+                <!--</html>-->
+                <!--<vlayout style="text-align:center;">-->
+                    <!--<a href="http://www.zkoss.org/download/zk/ce"-->
+                       <!--sclass="dl-link" target="_zkdemo">-->
+                        <!--<image src="/images/DownloadNow.jpg" />-->
+                    <!--</a>-->
+                    <!--<toolbarbutton label="Download"-->
+                                   <!--href="http://www.zkoss.org/download/zk/ce" target="_zkdemo" />-->
+                <!--</vlayout>-->
             <!--</vlayout>-->
-        <!--</west>-->
-        <!--&lt;!&ndash;<east width="130px" title="Quick Links" flex="true">&ndash;&gt;-->
-            <!--&lt;!&ndash;<vlayout>&ndash;&gt;-->
-                <!--&lt;!&ndash;<html>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<![CDATA[ <ul> <li>Tutorial</li> <li>Docs</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>ZK vs GWT</li> <li>ZK vs Ajax JSF</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<li>Forum</li> <li>FAQ</li> <li>Contact us</li>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</ul> ]]>&ndash;&gt;-->
-                <!--&lt;!&ndash;</html>&ndash;&gt;-->
-                <!--&lt;!&ndash;<vlayout style="text-align:center;">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<a href="http://www.zkoss.org/download/zk/ce"&ndash;&gt;-->
-                       <!--&lt;!&ndash;sclass="dl-link" target="_zkdemo">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<image src="/images/DownloadNow.jpg" />&ndash;&gt;-->
-                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<toolbarbutton label="Download"&ndash;&gt;-->
-                                   <!--&lt;!&ndash;href="http://www.zkoss.org/download/zk/ce" target="_zkdemo" />&ndash;&gt;-->
-                <!--&lt;!&ndash;</vlayout>&ndash;&gt;-->
-            <!--&lt;!&ndash;</vlayout>&ndash;&gt;-->
-        <!--&lt;!&ndash;</east>&ndash;&gt;-->
+        <!--</east>-->
         <!--&lt;!&ndash; Content &ndash;&gt;-->
         <!--<center>-->
 
         <!--</center>-->
-        <!--&lt;!&ndash;<south size="40px" border="0"&ndash;&gt;-->
-               <!--&lt;!&ndash;style="background: none repeat scroll 0 0 ;">&ndash;&gt;-->
-            <!--&lt;!&ndash;<toolbar mold="panel" align="center">&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Sign in" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Home" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Sitemap" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Terms" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Report Abuse" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<toolbarbutton label="Print" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<separator orient="vertical" bar="true" />&ndash;&gt;-->
-                <!--&lt;!&ndash;Powered by ZK ${desktop.webApp.version} ZK&ndash;&gt;-->
-                <!--&lt;!&ndash;Borderlayout&ndash;&gt;-->
-            <!--&lt;!&ndash;</toolbar>&ndash;&gt;-->
-        <!--&lt;!&ndash;</south>&ndash;&gt;-->
+        <!--<south size="40px" border="0"-->
+               <!--style="background: none repeat scroll 0 0 ;">-->
+            <!--<toolbar mold="panel" align="center">-->
+                <!--<toolbarbutton label="Sign in" />-->
+                <!--<toolbarbutton label="Home" />-->
+                <!--<toolbarbutton label="Sitemap" />-->
+                <!--<toolbarbutton label="Terms" />-->
+                <!--<toolbarbutton label="Report Abuse" />-->
+                <!--<toolbarbutton label="Print" />-->
+                <!--<separator orient="vertical" bar="true" />-->
+                <!--Powered by ZK ${desktop.webApp.version} ZK-->
+                <!--Borderlayout-->
+            <!--</toolbar>-->
+        <!--</south>-->
     <!--</borderlayout>-->
 
 <!--</zk>-->

@@ -26,8 +26,21 @@
             <name>ZK CE Repository</name>
             <url>http://mavensync.zkoss.org/maven2</url>
         </repository>
+        <repository>
+            <id>ZK EVAL</id>
+            <name>ZK Evaluation Repository</name>
+            <url>http://mavensync.zkoss.org/eval</url>
+        </repository>
+
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>zkmaven</id>
+            <name>ZK Maven Plugin Repository</name>
+            <url>http://mavensync.zkoss.org/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencies>
         <!-- JUnit integration -->
@@ -308,11 +321,6 @@
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
-            <artifactId>zul</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
             <artifactId>zkplus</artifactId>
             <version>${zk.version}</version>
         </dependency>
@@ -326,6 +334,17 @@
             <artifactId>yuicompressor-maven-plugin-zk</artifactId>
             <version>1.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zul</artifactId>
+            <version>${zk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.zkoss.zk</groupId>
+            <artifactId>zkmax</artifactId>
+            <version>7.0.3-Eval</version>
+        </dependency>
+
         <!--<dependency>-->
             <!--<groupId>org.zkoss.addons</groupId>-->
             <!--<artifactId>zk-bootstrap</artifactId>-->
