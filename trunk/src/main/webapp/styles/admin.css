@@ -1,0 +1,11 @@
+.header {
+    color: #cdbfe3;
+    padding: 30px 15px;
+    text-shadow: 0 1px rgba(0,0,0,.1);
+    background: #6f5499 linear-gradient(to bottom, #563d7c 0, #6f5499 100%) repeat-x;
+}
+
+.header .title {
+    font-weight: 500;
+    font-size: 30px;
+}

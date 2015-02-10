@@ -4,6 +4,7 @@ import org.swas.domain.User;
 import org.swas.service.Result;
 import org.swas.service.UserService;
 import org.swas.web.controller.ActivationUrlGeneratorImpl;
+import org.zkoss.util.Locales;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
@@ -64,7 +65,7 @@ public class RegistrationComposer extends SelectorComposer<Component> {
     newUser.setName(nameBox.getValue());
     newUser.setPsw(passwordBox.getValue());
     //save user input into newUser object
-    Result r = userService.register(newUser, request.getLocale(), new ActivationUrlGeneratorImpl(request));
+    Result r = userService.register(newUser, Locales.getCurrent(), new ActivationUrlGeneratorImpl(request));
     if (r.isOk()) {
       Messagebox.show("Success", "Error", Messagebox.OK, Messagebox.ERROR);
 //      Executions.sendRedirect("/chapter8/login.zul");

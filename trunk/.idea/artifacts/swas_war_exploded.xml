@@ -90,6 +90,10 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.7.5" />
           <element id="library" level="project" name="Maven: org.zkoss.zk:zkplus:7.0.3" />
           <element id="library" level="project" name="Maven: org.zkoss.zk:zhtml:7.0.3" />
+          <element id="library" level="project" name="Maven: org.zkoss.maven:yuicompressor-maven-plugin-zk:1.2.0" />
+          <element id="library" level="project" name="Maven: com.yahoo.platform.yui:yuicompressor:2.4.7" />
+          <element id="library" level="project" name="Maven: rhino:js:1.6R7" />
+          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-utils:1.5.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
