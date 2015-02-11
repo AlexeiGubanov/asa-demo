@@ -1,0 +1,32 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:n="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <div sclass="header">
+        <n:h1 class="title">
+            <a href="/">
+                ${labels.admin.header.title}
+            </a>
+        </n:h1>
+    </div>
+
+    <div sclass="search">
+        <bandbox placeholder="Search here..."/>
+    </div>
+    <div sclass="user-nav">
+        <menubar>
+            <menuitem iconSclass="icon icon-white icon-user" label="Profile"/>
+            <menu iconSclass="icon icon-white icon-envelope" label="Messages">
+                <menupopup sclass="navpp">
+                    <menuitem label="new message"/>
+                    <menuitem label="inbox"/>
+                    <menuitem label="outbox"/>
+                    <menuitem label="trash"/>
+                </menupopup>
+            </menu>
+            <menuitem iconSclass="icon icon-white icon-cog" label="Settings"/>
+            <menuitem iconSclass="icon icon-white icon-share-alt" label="Logout"/>
+        </menubar>
+    </div>
+</zk>

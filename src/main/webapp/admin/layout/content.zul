@@ -1,0 +1,40 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:n="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+    <popup id="btntip" sclass="btn-tip" style="margin-top: 10px">
+        <label id="msg" value=""></label>
+        <attribute name="onOpen">
+            if (event.isOpen()) {
+            msg.setValue(event.getReference().getAttribute("title").toString());
+            }
+        </attribute>
+    </popup>
+    <div sclass="content">
+        <div sclass="content-header">
+            <n:h1>Dashboard</n:h1>
+            <div sclass="btn-group">
+                <button zclass="btn" iconSclass="icon-file" tooltip="btntip,after_center">
+                    <custom-attributes title="Manage Files"/>
+                </button>
+                <button zclass="btn" iconSclass="icon-user" tooltip="btntip,after_center">
+                    <custom-attributes title="Manage Users"/>
+                </button>
+                <button zclass="btn" iconSclass="icon-comment" tooltip="btntip,after_center">
+                    <custom-attributes title="Manage Comments"/>
+                </button>
+                <button zclass="btn" iconSclass="icon-shopping-cart" tooltip="btntip,after_center">
+                    <custom-attributes title="Manage Orders"/>
+                </button>
+            </div>
+        </div>
+        <div sclass="breadcrumb">
+            <a href="#" tooltip="btntip,after_center" iconSclass="icon-home">
+                ${labels.admin.dashboard.home.title}
+                <custom-attributes title="${labels.admin.dashboard.home.hint}"/>
+            </a>
+            <a href="#">${labels.admin.dashboard.title}</a>
+        </div>
+        <div self="@insert(content)"/>
+    </div>
+</zk>
