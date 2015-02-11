@@ -36,7 +36,7 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectResources">
-    <resource url="http://www.zkoss.org/2005/zul/zul.xsd" location="" />
+    <resource url="http://www.zkoss.org/2005/zul/zul.xsd" location="$MAVEN_REPOSITORY$/org/zkoss/zk/zul/7.0.0/zul-7.0.0.jar" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

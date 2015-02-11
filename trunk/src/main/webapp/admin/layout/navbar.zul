@@ -1,0 +1,23 @@
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <navbar orient="vertical" sclass="sidebar">
+        <navitem iconSclass="icon icon-white icon-home" label="Dashboard" selected="true"/>
+        <nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">
+            <navitem label="Common elements"/>
+            <navitem label="Validation"/>
+            <navitem label="Wizard"/>
+        </nav>
+        <navitem iconSclass="icon icon-white icon-tint" label="Buttons &amp; icons"/>
+        <navitem iconSclass="icon icon-white icon-pencil" label="Interface elements"/>
+        <navitem iconSclass="icon icon-white icon-th" label="Tables"/>
+        <navitem iconSclass="icon icon-white icon-th-list" label="Grid Layout"/>
+        <nav iconSclass="icon icon-white icon-file" label="Sample pages" badgeText="4">
+            <navitem label="Invoice"/>
+            <navitem label="Support chat"/>
+            <navitem label="Calendar"/>
+            <navitem label="Gallery"/>
+        </nav>
+    </navbar>
+</zk>
