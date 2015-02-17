@@ -9,31 +9,53 @@
 <?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/grey.css.dsp" ?>
 
 <zk>
-    <div self="@define(content)" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('org.swas.web.zk.vm.UsersViewModel')">
+    <div self="@define(content)" apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('org.swas.web.zk.vm.UsersViewModel')">
         <hbox align="center">
             Keyword:
             <textbox id="keywordBox" value="@bind(vm.keyword)"/>
             <button id="searchButton" label="Search" onClick="@command('search')"/>
         </hbox>
-        <grid id="usersGrid" model="@bind(vm.users)" emptyMessage="No user found in the result">
+        <separator />
+        Found : <label value="@load(vm.users.size())" />
+        <separator />
+        <listbox id="usersGrid" model="@bind(vm.users)" emptyMessage="No user found in the result"
+                 selectedItem="@bind(vm.selectedUser)">
             <auxhead>
                 <auxheader colspan="4" label="Contributor of ZK International Message(Part)"/>
             </auxhead>
-            <columns>
-                <column hflex="5">Login</column>
-                <column hflex="6">Email</column>
-                <column hflex="3">Name</column>
-                <column hflex="4">Psw</column>
-            </columns>
+            <listhead>
+                <listheader label="Login"/>
+                <listheader label="Email"/>
+                <listheader label="Name"/>
+                <listheader label="Psw"/>
+                <listheader label="Ctrl"/>
+            </listhead>
             <template name="model">
-                <row>
-                    <label value="@load(each.login)" />
-                    <label value="@load(each.email)" />
-                    <label value="@load(each.name)" />
-                    <label value="@load(each.psw)" />
-
-                </row>
+                <listitem>
+                    <listcell label="@load(each.login)"/>
+                    <listcell label="@load(each.email)"/>
+                    <listcell label="@load(each.name)"/>
+                    <listcell label="@load(each.psw)"/>
+                    <listcell>
+                    <button label="Delete" onClick="@command('removeUser', user=each)" />
+                    </listcell>
+                </listitem>
             </template>
+        </listbox>
+        <grid>
+            <auxhead>
+                <auxheader colspan="5" class="topic">Edit Data</auxheader>
+            </auxhead>
+            <rows>
+                <row>
+                    <textbox value="@bind(vm.selectedUser.login)" />
+                    <textbox value="@bind(vm.selectedUser.email)" />
+                    <textbox value="@bind(vm.selectedUser.name)" />
+                    <textbox value="@load(vm.selectedUser.psw)"/>
+                    <button label="Save" onClick="@command('saveUser', user=vm.selectedUser)" />
+                </row>
+            </rows>
         </grid>
     </div>
 </zk>

@@ -1,7 +1,9 @@
 package org.swas.web.zk.vm;
 
+import org.apache.commons.lang3.StringUtils;
 import org.swas.domain.User;
 import org.swas.service.UserService;
+import org.zkoss.bind.annotation.BindingParam;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
@@ -51,6 +53,23 @@ public class UsersViewModel {
   @Init
   public void init() {
     users = userService.findAll();
+  }
+
+  @Command
+  @NotifyChange("users")
+  public void removeUser(@BindingParam("user") User user) {
+    userService.delete(user);
+    if (StringUtils.isNotEmpty(keyword)) {
+      search();
+    } else {
+      init();
+    }
+  }
+
+  @Command
+  @NotifyChange("users")
+  public void saveUser(@BindingParam("user") User user) {
+    userService.save(user);
   }
 
   @Command
