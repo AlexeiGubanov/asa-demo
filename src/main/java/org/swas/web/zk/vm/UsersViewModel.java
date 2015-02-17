@@ -57,8 +57,7 @@ public class UsersViewModel {
 
   @Command
   @NotifyChange("users")
-  public void removeUser(@BindingParam("user") User user) {
-    userService.delete(user);
+  public void refresh() {
     if (StringUtils.isNotEmpty(keyword)) {
       search();
     } else {
@@ -68,8 +67,22 @@ public class UsersViewModel {
 
   @Command
   @NotifyChange("users")
+  public void removeUser(@BindingParam("user") User user) {
+    userService.delete(user);
+    refresh();
+  }
+
+  @Command
+  @NotifyChange("users")
+  public void addUser() {
+    this.selectedUser = new User();
+  }
+
+  @Command
+  @NotifyChange("users")
   public void saveUser(@BindingParam("user") User user) {
-    userService.save(user);
+    userService.createOrUpdate(user);
+    refresh();
   }
 
   @Command

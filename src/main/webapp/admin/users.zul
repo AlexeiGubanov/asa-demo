@@ -19,6 +19,8 @@
         <separator />
         Found : <label value="@load(vm.users.size())" />
         <separator />
+        <button label="New" onClick="@command('addUser')" />
+        <button label="Refresh" onClick="@command('refresh')" />
         <listbox id="usersGrid" model="@bind(vm.users)" emptyMessage="No user found in the result"
                  selectedItem="@bind(vm.selectedUser)">
             <auxhead>
@@ -52,7 +54,7 @@
                     <textbox value="@bind(vm.selectedUser.login)" />
                     <textbox value="@bind(vm.selectedUser.email)" />
                     <textbox value="@bind(vm.selectedUser.name)" />
-                    <textbox value="@load(vm.selectedUser.psw)"/>
+                    <textbox value="@bind(vm.selectedUser.psw)"/>
                     <button label="Save" onClick="@command('saveUser', user=vm.selectedUser)" />
                 </row>
             </rows>
