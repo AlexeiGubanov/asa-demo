@@ -2,6 +2,7 @@ package org.swas.service;
 
 import org.swas.domain.User;
 
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -33,4 +34,5 @@ public interface UserService extends GenericDaoService<User, Long> {
 
   Result update(User trans);
 
+  List<User> search(String keyword);
 }

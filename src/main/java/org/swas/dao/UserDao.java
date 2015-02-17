@@ -2,6 +2,8 @@ package org.swas.dao;
 
 import org.swas.domain.User;
 
+import java.util.List;
+
 /**
  * Sample custom dao extending of {@link GenericDao}
  */
@@ -49,4 +51,10 @@ public interface UserDao extends GenericDao<User, Long> {
    */
   boolean isEmailExists(String email);
 
+  /**
+   * Performs search on the given keyword (is used to match for login,name,email)
+   * @param keyword
+   * @return
+   */
+  List<User> search(String keyword);
 }

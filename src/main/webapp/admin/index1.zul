@@ -1,16 +1,30 @@
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="layout/template.zul"?>
 <?page title="${labels.admin.page.title}"?>
-<?link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.css"  ?>
+
+
+
+<!-- Load Bootstrap  -->
+<?link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+
+<!-- Google Open Sans font -->
+<!-- Load fonts from local -->
+<?link href="/resources/css/fonts.css" rel="stylesheet" type="text/css"?>
+<!-- Unmark if we want to use fonts from google server
+<?link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'?>
+-->
+
 <?link rel="stylesheet" type="text/css" href="/resources/css/index.css.dsp" ?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/user-nav.css.dsp" ?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/sidebar.css.dsp" ?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/search.css.dsp" ?>
 <?link rel="stylesheet" type="text/css" href="/resources/css/content-header.css.dsp" ?>
-<?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/grey.css.dsp" ?>
+<?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/grey.css.dsp"  if="${param.theme eq 'grey' or empty param.theme}"?>
+<?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/red.css.dsp"  if="${param.theme eq 'red'}"?>
+<?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/light-blue.css.dsp"  if="${param.theme eq 'light-blue'}"?>
 
 
-<zk xmlns:n="native">
-    <vlayout self="@define(content)"  style="padding: 20px">
+<zk>
+    <vlayout self="@define(content)" xmlns:n="native" style="padding: 20px">
         <div class="row-fluid">
             <div class="center" style="text-align: center;">
                 <hlayout sclass="stat-boxes">

@@ -3,13 +3,13 @@
     xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
 
     <navbar orient="vertical" sclass="sidebar">
-        <navitem iconSclass="icon icon-white icon-home" label="Dashboard" selected="true"/>
-        <nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">
-            <navitem label="Common elements"/>
-            <navitem label="Validation"/>
-            <navitem label="Wizard"/>
-        </nav>
-        <navitem iconSclass="icon icon-white icon-tint" label="Buttons &amp; icons"/>
+        <navitem iconSclass="icon icon-white icon-home" label="${labels.admin.navitem.dashboard}" selected="true" href="index.zul" />
+        <!--<nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">-->
+            <!--<navitem label="Common elements"/>-->
+            <!--<navitem label="Validation"/>-->
+            <!--<navitem label="Wizard"/>-->
+        <!--</nav>-->
+        <navitem iconSclass="icon icon-white icon-tint" label="${labels.admin.navitem.users}" href="users.zul"/>
         <navitem iconSclass="icon icon-white icon-pencil" label="Interface elements"/>
         <navitem iconSclass="icon icon-white icon-th" label="Tables"/>
         <navitem iconSclass="icon icon-white icon-th-list" label="Grid Layout"/>
