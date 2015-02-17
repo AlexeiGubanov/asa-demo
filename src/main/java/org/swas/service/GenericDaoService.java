@@ -26,4 +26,9 @@ public interface GenericDaoService<T extends Persistable<ID>, ID extends Seriali
 
   Result create(T... entities);
 
+  /**
+   * !Use carefully!
+   */
+  Result save(T... entities);
+
 }

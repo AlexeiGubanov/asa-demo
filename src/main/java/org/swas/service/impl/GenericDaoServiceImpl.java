@@ -83,4 +83,14 @@ public class GenericDaoServiceImpl<T extends Persistable<ID>, ID extends Seriali
     }
     return new Result(r);
   }
+
+  @Transactional
+  public Result save(T... entities) {
+    List<T> r = new ArrayList<T>();
+    for (T e : entities) {
+      getDao().update(e);
+      r.add(e);
+    }
+    return new Result(r);
+  }
 }

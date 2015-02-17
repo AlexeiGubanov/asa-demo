@@ -92,6 +92,10 @@ public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implement
     return new Result(stored);
   }
 
+  public Result save(User user) {
+    return null;
+  }
+
   @Transactional
   public Result register(User user, Locale locale, ActivationUrlGenerator activationUrlGenerator) {
     if (user == null || activationUrlGenerator == null)
