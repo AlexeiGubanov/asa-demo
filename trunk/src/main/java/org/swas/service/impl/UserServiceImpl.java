@@ -22,10 +22,7 @@ import org.swas.util.SystemParameters;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.TimeZone;
+import java.util.*;
 
 @Service("userService")
 public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implements UserService {
@@ -56,12 +53,7 @@ public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implement
     MimeMessage message = mailSender.createMimeMessage();
     MimeMessageHelper helper = new MimeMessageHelper(message, true);
     helper.setTo(user.getEmail());
-
-    //WARNING ������������� �������� ��������� ��������� ������ �� �������, ����� ������ ��� ����������
-    // �������� ��� JavaMail API
     message.setFrom();
-
-
     Map<String, Object> model = new HashMap<String, Object>();
     model.put("user", user);
     model.put("url", activationUrl);
@@ -189,5 +181,8 @@ public class UserServiceImpl extends GenericDaoServiceImpl<User, Long> implement
     return new Result(u);
   }
 
-
+  @Transactional(readOnly = true)
+  public List<User> search(String keyword) {
+    return dao.search(keyword);
+  }
 }

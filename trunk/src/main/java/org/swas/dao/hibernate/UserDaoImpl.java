@@ -1,11 +1,14 @@
 package org.swas.dao.hibernate;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.swas.dao.UserDao;
 import org.swas.domain.User;
+
+import java.util.List;
 
 /**
  * Sample hibernate implementation of {@code UserDao}
@@ -48,8 +51,13 @@ public class UserDaoImpl extends GenericDaoImpl<User, Long> implements UserDao {
     DetachedCriteria detachedCriteria = getDetachedCriteria();
     detachedCriteria.add(Restrictions.eq("activationCode", code).ignoreCase());
     return (User) getExecutableCriteria(detachedCriteria).uniqueResult();
-
   }
 
-
+  public List<User> search(String keyword) {
+    DetachedCriteria detachedCriteria = getDetachedCriteria();
+    detachedCriteria.add(Restrictions.disjunction().add(Restrictions.ilike("email", keyword, MatchMode.ANYWHERE)).add
+        (Restrictions.ilike("login", keyword, MatchMode.ANYWHERE)).add(Restrictions.ilike("name", keyword, MatchMode
+        .ANYWHERE)));
+    return getExecutableCriteria(detachedCriteria).list();
+  }
 }

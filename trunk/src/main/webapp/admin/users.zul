@@ -1,0 +1,39 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="layout/template.zul"?>
+<?page title="${labels.admin.page.title}"?>
+<?link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.css"  ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/index.css.dsp" ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/user-nav.css.dsp" ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/sidebar.css.dsp" ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/search.css.dsp" ?>
+<?link rel="stylesheet" type="text/css" href="/resources/css/content-header.css.dsp" ?>
+<?link id="theme" rel="stylesheet" type="text/css" href="/resources/css/grey.css.dsp" ?>
+
+<zk>
+    <div self="@define(content)" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('org.swas.web.zk.vm.UsersViewModel')">
+        <hbox align="center">
+            Keyword:
+            <textbox id="keywordBox" value="@bind(vm.keyword)"/>
+            <button id="searchButton" label="Search" onClick="@command('search')"/>
+        </hbox>
+        <grid id="usersGrid" model="@bind(vm.users)" emptyMessage="No user found in the result">
+            <auxhead>
+                <auxheader colspan="4" label="Contributor of ZK International Message(Part)"/>
+            </auxhead>
+            <columns>
+                <column hflex="5">Login</column>
+                <column hflex="6">Email</column>
+                <column hflex="3">Name</column>
+                <column hflex="4">Psw</column>
+            </columns>
+            <template name="model">
+                <row>
+                    <label value="@load(each.login)" />
+                    <label value="@load(each.email)" />
+                    <label value="@load(each.name)" />
+                    <label value="@load(each.psw)" />
+
+                </row>
+            </template>
+        </grid>
+    </div>
+</zk>
